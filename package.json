@@ -3,6 +3,7 @@
   "license": "MIT",
   "scripts": {
     "bootstrap": "yarn lerna bootstrap",
+    "start:front": "cd packages/front && yarn start",
     "changelog": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
     "prepare": "husky install"
   },

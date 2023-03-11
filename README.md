@@ -9,8 +9,7 @@ yarn bootstrap
 
 ```
 // run frontend
-cd packages/frontend
-yarn start
+yarn start:front
 ```
 
 # Contribution
