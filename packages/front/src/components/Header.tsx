@@ -2,6 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Typography from '@mui/material/Typography';
 
 export const Header: React.FC = () => {
@@ -26,6 +27,8 @@ export const Header: React.FC = () => {
           >
             LOGO
           </Typography>
+
+          <ConnectButton />
         </Toolbar>
       </Box>
     </AppBar>

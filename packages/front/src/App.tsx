@@ -1,26 +1,26 @@
 import React from 'react';
-import './App.css';
 import theme from './theme';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routes';
 import { store } from './store'
 import { Provider } from 'react-redux'
-import '@rainbow-me/rainbowkit/styles.css';
-
 import {
   getDefaultWallets,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
-// import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+
+import './App.css';
+import '@rainbow-me/rainbowkit/styles.css';
 
 const { chains, provider } = configureChains(
   [mainnet, polygon, optimism, arbitrum],
   [
-    // alchemyProvider({ apiKey: process.env.ALCHEMY_ID || '' }),
+    // alchemyProvider({ apiKey: process.env.ALCHEMY_ID ?? '' }),
     publicProvider()
   ]
 );
