@@ -10,15 +10,16 @@ import {
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { mainnet, polygon, optimism, zkSync, zkSyncTestnet } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import { chiadoTestnet, gerliTestnet, srcollAlfaTestnet } from './chains';
 
 import './App.css';
 import '@rainbow-me/rainbowkit/styles.css';
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum],
+  [chiadoTestnet, gerliTestnet, srcollAlfaTestnet, mainnet, polygon, optimism, zkSyncTestnet, zkSync],
   [
     // alchemyProvider({ apiKey: process.env.ALCHEMY_ID ?? '' }),
     publicProvider()
