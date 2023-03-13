@@ -25,6 +25,30 @@ export const srcollAlfaTestnet: Chain = {
   }
 }
 
+export const polygonZkEvmTestnet: Chain = {
+  id: 1442,
+  name: 'Polygon zkEVM Testnet',
+  network: '',
+  nativeCurrency: {
+    name: 'ETH',
+    symbol: 'ETH',
+    decimals: 18
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://rpc.public.zkevm-test.net']
+    },
+    public: {
+      http: ['https://rpc.public.zkevm-test.net']
+    }
+  },
+  blockExplorers: {
+    default: {
+      name: 'blockscout',
+      url: 'https://explorer.public.zkevm-test.net'
+    }
+  }
+}
 export const gerliTestnet: Chain = {
   id: 5,
   name: 'Görli Testnet',
@@ -50,27 +74,27 @@ export const gerliTestnet: Chain = {
   }
 }
 
-export const chiadoTestnet: Chain = {
-  id: 10200,
-  name: 'Chiado Testnet (XDAI)',
-  network: 'Gnosis',
-  nativeCurrency: {
-    name: 'XDAI',
-    symbol: 'XDAI',
-    decimals: 18
-  },
-  rpcUrls: {
-    default: {
-      http: ['https://rpc.chiadochain.net']
-    },
-    public: {
-      http: ['https://rpc.chiadochain.net']
-    }
-  },
-  blockExplorers: {
-    default: {
-      name: 'blockscout',
-      url: 'https://blockscout.com/gnosis/chiado'
-    }
-  }
-}
+// export const chiadoTestnet: Chain = {
+//   id: 10200,
+//   name: 'Chiado Testnet (XDAI)',
+//   network: 'Gnosis',
+//   nativeCurrency: {
+//     name: 'XDAI',
+//     symbol: 'XDAI',
+//     decimals: 18
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ['https://rpc.chiadochain.net']
+//     },
+//     public: {
+//       http: ['https://rpc.chiadochain.net']
+//     }
+//   },
+//   blockExplorers: {
+//     default: {
+//       name: 'blockscout',
+//       url: 'https://blockscout.com/gnosis/chiado'
+//     }
+//   }
+// }
