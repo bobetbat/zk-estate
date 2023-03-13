@@ -3,13 +3,18 @@
   "license": "MIT",
   "scripts": {
     "bootstrap": "yarn lerna bootstrap",
+    "start:front": "cd packages/front && yarn start",
+    "start:hardhat": "cd packages/contracts && yarn start",
+    "contract:compile":"cd packages/contracts && yarn compile",
+    "contract:test":"cd packages/contracts && yarn test",
+    "contract:deploy:local":"cd packages/contracts && yarn deploy:local",
     "changelog": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.1.0",
     "conventional-changelog-cli": "^2.2.2",
-    "lerna": "^4.0.0",
-    "husky": "^8.0.0"
+    "husky": "^8.0.3",
+    "lerna": "^4.0.0"
   }
 }

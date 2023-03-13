@@ -9,8 +9,17 @@ yarn bootstrap
 
 ```
 // run frontend
-cd packages/frontend
-yarn start
+yarn start:front
+```
+
+```
+// compile contracts
+yarn contracts:compile
+```
+
+```
+// test contracts
+yarn contracts:test
 ```
 
 # Contribution
