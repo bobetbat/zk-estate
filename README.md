@@ -12,5 +12,15 @@ yarn bootstrap
 yarn start:front
 ```
 
+```
+// compile contracts
+yarn contracts:compile
+```
+
+```
+// test contracts
+yarn contracts:test
+```
+
 # Contribution
 Conventional commits: https://www.conventionalcommits.org/en/v1.0.0/
