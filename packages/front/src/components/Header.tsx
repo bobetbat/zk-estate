@@ -9,14 +9,13 @@ export const Header: React.FC = () => {
   return (
     <AppBar>
       <Box maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between', px: '1rem' }}>
           <Typography
             variant="h6"
             noWrap
             component="a"
             href="/"
             sx={{
-              m: 2,
               display: { md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,

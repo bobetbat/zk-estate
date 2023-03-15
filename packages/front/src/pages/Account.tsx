@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { incrementByAmount } from '../store/reducers/counter';
 
-export const Products: React.FC = () => {
+export const Account: React.FC = () => {
   const counter = useSelector((state: RootState) => state.counter.value)
   const dispatch = useDispatch()
   const handleClick = () => {
@@ -16,7 +16,7 @@ export const Products: React.FC = () => {
   return (
     <Layout header footer>
       <Box mt='12vh'>
-        <Typography variant='h4'>About Product {counter}</Typography>
+        <Typography variant='h4'>Account {counter}</Typography>
         <Button onClick={handleClick} variant='contained' color='primary'> click me </Button>
       </Box>
     </Layout>
