@@ -6,12 +6,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { incrementByAmount } from '../store/reducers/counter';
 import logo from "./../logo.svg";
+import { useNavigate } from 'react-router';
+
+const contracts = [
+  { address: '0x123', name: 'contract 1' },
+]
 
 export const ContractListCard: React.FC = () => {
   const counter = useSelector((state: RootState) => state.counter.value)
   const dispatch = useDispatch()
-  const handleClick = () => {
-    dispatch(incrementByAmount(2))
+  const navigate = useNavigate()
+  const handleCreate = () => {
+    navigate('/create-contract')
   }
 
   return (
@@ -22,11 +28,13 @@ export const ContractListCard: React.FC = () => {
           <Stack direction='row' justifyContent='space-between'>
             <Typography textAlign='start' variant='h4'>Contracts {counter}</Typography>
 
-            <Button onClick={handleClick} variant='contained' color='primary'>Create</Button>
+            <Button onClick={handleCreate} variant='contained' color='primary'>Create</Button>
           </Stack>
-          <ListItemButton component="a" href="#simple-list">
-            <ListItemText primary="Spam" />
-          </ListItemButton>
+          {contracts.map((contract) => (
+            <ListItemButton component="a" href={`/contract/${contract.address}`}>
+              <ListItemText primary={contract.name} />
+            </ListItemButton>
+          ))}
         </Stack>
       </CardContent>
     </Card>
