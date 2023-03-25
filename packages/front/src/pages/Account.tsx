@@ -7,7 +7,7 @@ import { RootState } from '../store';
 import { incrementByAmount } from '../store/reducers/counter';
 import logo from "./../logo.svg";
 import { AccountCard } from '../components/AccountCard';
-import { AccommodationCard } from '../components/AccommodationCard';
+import { PropertyCard } from '../components/PropertyCard';
 import { ContractListCard } from '../components/ContractListCard';
 
 export const Account: React.FC = () => {
@@ -20,7 +20,7 @@ export const Account: React.FC = () => {
   return (
     <Layout header footer>
       <AccountCard />
-      <AccommodationCard />
+      <PropertyCard />
       <ContractListCard />
     </Layout>
   )
