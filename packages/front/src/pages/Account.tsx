@@ -1,10 +1,14 @@
 import React from 'react';
-import { Button, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardHeader, CardMedia, Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Layout } from '../components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { incrementByAmount } from '../store/reducers/counter';
+import logo from "./../logo.svg";
+import { AccountCard } from '../components/AccountCard';
+import { AccommodationCard } from '../components/AccommodationCard';
+import { ContractListCard } from '../components/ContractListCard';
 
 export const Account: React.FC = () => {
   const counter = useSelector((state: RootState) => state.counter.value)
@@ -15,10 +19,9 @@ export const Account: React.FC = () => {
 
   return (
     <Layout header footer>
-      <Box mt='12vh'>
-        <Typography variant='h4'>Account {counter}</Typography>
-        <Button onClick={handleClick} variant='contained' color='primary'> click me </Button>
-      </Box>
+      <AccountCard />
+      <AccommodationCard />
+      <ContractListCard />
     </Layout>
   )
 }
