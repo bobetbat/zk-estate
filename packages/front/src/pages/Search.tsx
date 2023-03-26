@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar';
 import FilterCheckboxes from '../components/FilterCheckboxes';
 import { Layout } from '../components/Layout';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { getItems, useGraph } from '../hooks/useGraph';
 
 const filterOptions = {
   location: [
@@ -98,7 +99,10 @@ export const Search: React.FC = () => {
     navigate(`/search?${new URLSearchParams(searchParams)}`);
   };
 
-  // navigate('/search')
+  const { loading, error, data } = useGraph(getItems);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
   return (
     <Layout header footer>
       <Grid container spacing={2}>
@@ -115,6 +119,14 @@ export const Search: React.FC = () => {
         </Grid>
         <Grid item xs={12} md={9}>
           <Grid container spacing={2} xs={12} >
+            {/* <div>
+              {data && data.pairs.map(pair => (
+                <div key={pair.id}>
+                  <p>Pair: {pair.token0.symbol}/{pair.token1.symbol}</p>
+                  <p>Reserve: {pair.reserve0}/{pair.reserve1} ({pair.reserveUSD})</p>
+                </div>
+              ))}
+            </div> */}
             {filteredApartments.map((apartment) => (
               <Grid item xs={12} md={6} key={apartment.id}>
                 <SearchCard

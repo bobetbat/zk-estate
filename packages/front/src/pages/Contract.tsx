@@ -7,6 +7,8 @@ import { RootState } from '../store';
 import { incrementByAmount } from '../store/reducers/counter';
 import logo from "./../logo.svg";
 import { useParams } from 'react-router-dom';
+import PropertyDetails from '../components/PropertyDetails';
+const mockdata = { "id": "1234", "title": "Spacious 2-Bedroom Apartment in the Heart of the City", "description": "This beautiful 2-bedroom apartment is located in the heart of the city and offers stunning views of the skyline. It features a spacious living room, fully equipped kitchen, and modern amenities.", "images": ["https://example.com/image1.jpg", "https://example.com/image2.jpg", "https://example.com/image3.jpg"], "area": { "size": 1000, "unit": "sqft" }, "building": { "name": "The Tower", "address": "123 Main St, City, State Zip", "yearBuilt": 2015, "floors": 20, "amenities": ["Swimming Pool", "Fitness Center", "24-Hour Concierge"] }, "consumption": { "electricity": { "usage": 200, "unit": "kWh" }, "water": { "usage": 500, "unit": "gal" } }, "price": { "amount": 2500, "currency": "USD", "period": "month" } }
 
 export const Contract: React.FC = () => {
   const counter = useSelector((state: RootState) => state.counter.value)
@@ -18,16 +20,7 @@ export const Contract: React.FC = () => {
 
   return (
     <Layout header footer>
-      <Card>
-        <CardContent>
-          <Stack gap={2}>
-            <Typography textAlign='start' variant='h4'>Contract {id}</Typography>
-            <Stack gap={2} mt={1}>
-              <Button onClick={handleClick} variant='contained' color='primary'> click me </Button>
-            </Stack>
-          </Stack>
-        </CardContent>
-      </Card>
+      <PropertyDetails propertyDetail={mockdata} />
     </Layout>
   )
 }
