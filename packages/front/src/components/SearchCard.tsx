@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import logo from "./../logo.svg";
 
 interface SearchCardProps {
   title: string;
@@ -20,7 +21,7 @@ const SearchCard: React.FC<SearchCardProps> = ({ handleDetail,title, description
     <Card>
       <CardMedia
         component="img"
-        image={imageUrls[selectedImageIndex]}
+        image={logo}
         onClick={() => handleImageClick(selectedImageIndex + 1)}
       />
       <CardContent>

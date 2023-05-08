@@ -13,13 +13,13 @@ import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, zkSync, zkSyncTestnet, gnosis, gnosisChiado } from 'wagmi/chains';
 // import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { gerliTestnet, polygonZkEvmTestnet, srcollAlfaTestnet } from './chains';
+import { gerliTestnet, polygonZkEvmTestnet, OptimismTestnet, srcollAlfaTestnet } from './chains';
 
 import './App.css';
 import '@rainbow-me/rainbowkit/styles.css';
 
 const { chains, provider } = configureChains(
-  [gerliTestnet, srcollAlfaTestnet, mainnet, polygon, polygonZkEvmTestnet, gnosis, gnosisChiado, optimism, zkSyncTestnet, zkSync],
+  [gerliTestnet, OptimismTestnet, srcollAlfaTestnet, mainnet, polygon, polygonZkEvmTestnet, gnosis, gnosisChiado, optimism, zkSyncTestnet, zkSync],
   [
     // alchemyProvider({ apiKey: process.env.ALCHEMY_ID ?? '' }),
     publicProvider()

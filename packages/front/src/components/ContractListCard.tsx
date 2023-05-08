@@ -24,10 +24,8 @@ export const ContractListCard: React.FC = () => {
     <Card>
       <CardContent>
         <Stack gap={2}>
-
           <Stack direction='row' justifyContent='space-between'>
             <Typography textAlign='start' variant='h4'>Contracts {counter}</Typography>
-
             <Button onClick={handleCreate} variant='contained' color='primary'>Create</Button>
           </Stack>
           {contracts.map((contract) => (

@@ -9,6 +9,7 @@ import {
   ImageList,
   ImageListItem,
 } from '@mui/material';
+import logo from "./../logo.svg";
 
 interface PropertyDetail {
   id: string;
@@ -45,6 +46,7 @@ interface PropertyDetail {
 
 interface Props {
   propertyDetail: PropertyDetail;
+  handleCollateralLock: () => void;
 }
 
 const Image = styled('img')({
@@ -58,7 +60,7 @@ const AmenitiesWrapper = styled('div')({
   alignItems: 'flex-start',
 });
 
-const PropertyDetailPage: React.FC<Props> = ({ propertyDetail }) => {
+const PropertyDetailPage: React.FC<Props> = ({ propertyDetail, handleCollateralLock }) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const handleNextImage = () => {
@@ -82,7 +84,7 @@ const PropertyDetailPage: React.FC<Props> = ({ propertyDetail }) => {
               {propertyDetail.images.map((image, index) => (
                 <ImageListItem key={index}>
                   <Image
-                    src={image}
+                    src={logo}
                     alt={propertyDetail.title}
                     style={{
                       display: index === imageIndex ? 'block' : 'none',
@@ -158,7 +160,7 @@ const PropertyDetailPage: React.FC<Props> = ({ propertyDetail }) => {
               {propertyDetail.price.amount} {propertyDetail.price.currency} per{' '}
               {propertyDetail.price.period}
             </Typography>
-            <Button onClick={() => console.log('hello')} variant='contained' color='primary'>Lock Collateral</Button>
+            <Button onClick={() => { alert(`Collateral locked ${propertyDetail.price.amount}`); handleCollateralLock() }} variant='contained' color='primary'>Lock Collateral</Button>
           </Grid>
         </Grid>
       </Paper>
