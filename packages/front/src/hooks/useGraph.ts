@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
+import { ethers } from 'ethers';
+import { providers } from 'ethers';
+import { useProvider } from "wagmi";
+import Lock from '../../abi/Lock.json';
 
 const endpoint = 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2';
-
 const headers = {
   "content-type": "application/json",
   // "Authorization": "<token>"
 };
-
 interface Query {
   query: string;
 }
-
 export const getItems: Query = {
   "query": `{
     pairs {
@@ -21,10 +22,11 @@ export const getItems: Query = {
 
 
 export const useGraph = (graphqlQuery: Query) => {
-  const [data, setData] = useState<Response | null>(null);
+  const [data, setData] = useState<ethers.Contract | null>(null);
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [error, setError] = useState<any>(null);
+  // const provider = useProvider();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,9 +38,12 @@ export const useGraph = (graphqlQuery: Query) => {
         };
         const response = await fetch(endpoint, options);
         const data = await response.json();
-        setData(data.data);
+        console.log('providers.getDefaultProvider()',)
+
+        setData(data);
         console.log("fetch data:", data);
       } catch (error) {
+        console.log("error Contract:", error);
         setError(error);
       } finally {
         setLoading(false);

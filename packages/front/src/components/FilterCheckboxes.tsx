@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@mui/material';
+import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Typography } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 interface Options {
   [key: string]: string[];
@@ -31,7 +31,11 @@ const FilterCheckboxes: React.FC<FilterCheckboxesProps> = ({ options, onChange }
     <FormControl component="fieldset">
       {Object.keys(options).map((key) => (
         <>
-          <FormLabel component="legend">{key}</FormLabel>
+          <FormLabel>
+            <Typography textAlign="start" textTransform='capitalize' fontWeight={700}>
+              {key}
+            </Typography>
+          </FormLabel>
           <FormGroup>
             {options[key].map((option) => (
               <FormControlLabel
@@ -46,17 +50,6 @@ const FilterCheckboxes: React.FC<FilterCheckboxesProps> = ({ options, onChange }
     </FormControl>
   );
 };
-
-{/* <FormLabel component="legend">{filterName}</FormLabel>
-      <FormGroup>
-        {options.map((option) => (
-          <FormControlLabel
-            key={option}
-            control={<Checkbox checked={selectedOptions.includes(option)} onChange={handleCheckboxChange} value={option} />}
-            label={option}
-          />
-        ))}
-      </FormGroup> */}
 
 FilterCheckboxes.propTypes = {
   // filterName: PropTypes.string.isRequired,

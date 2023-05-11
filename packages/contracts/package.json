@@ -1,9 +1,10 @@
 {
-  "name": "hardhat-project",
+  "name": "contracts",
+  "version": "0.0.1",
   "scripts": {
-    "compile":"yarn hardhat compile",
-    "test":"yarn hardhat test",
-    "start":"yarn hardhat node",
+    "compile": "yarn hardhat compile",
+    "test": "yarn hardhat test",
+    "start": "yarn hardhat node",
     "deploy:local": "yarn hardhat run scripts/deploy.ts --network localhost"
   },
   "devDependencies": {
