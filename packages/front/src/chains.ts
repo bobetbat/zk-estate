@@ -25,6 +25,31 @@ export const srcollAlfaTestnet: Chain = {
   }
 }
 
+export const OptimismTestnet: Chain = {
+  id: 420,
+  name: 'Optimism Testnet',
+  network: '',
+  nativeCurrency: {
+    name: 'ETH',
+    symbol: 'ETH',
+    decimals: 18
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://goerli.optimism.io']
+    },
+    public: {
+      http: ['https://goerli.optimism.io']
+    }
+  },
+  blockExplorers: {
+    default: {
+      name: 'blockscout',
+      url: 'https://blockscout.scroll.io/'
+    }
+  }
+}
+
 export const polygonZkEvmTestnet: Chain = {
   id: 1442,
   name: 'Polygon zkEVM Testnet',
